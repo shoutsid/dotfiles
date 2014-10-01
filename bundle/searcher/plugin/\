@@ -1,0 +1,8 @@
+function! s:search(myParam)
+  let foo=a:myParams
+
+  echo "We are in the search function " + foo
+
+endfunction
+
+command! -nargs=1 Test call s:search(<f-args>)
