@@ -6,17 +6,19 @@ set ts=2 et sw=2
 " Relative Line Numbers
 set relativenumber
 
-" Auto NERDTree onlvim start
+" Auto NERDTree on vim start
 autocmd vimenter * NERDTree
-" Switch out of nerdtree pane into the file pane
+" Switch out of NERDTree pane into the file pane
 autocmd vimenter * wincmd p
+" Show hiddedn files in NERDTree
+let NERDTreeShowHidden=1
 
 " Map our leader key
 let mapleader = ','
 
 syntax on
 set background=dark
-"colorscheme solarized
+colorscheme solarized
 "let g:solarized_termcolors=256
 
 " Force red highlight for trailing whitespace
@@ -41,7 +43,7 @@ if $TMUX == ''
   set clipboard=unnamed
 endif
 
-" Change font style to be bigger and more readable
+" Change font style to be bigger and more readable when using gvim
 set guifont=Menlo\ Regular:h13
 
 " Rspec Runner
