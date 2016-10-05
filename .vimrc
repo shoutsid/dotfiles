@@ -18,7 +18,7 @@ let mapleader = ','
 
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme monokai
 "let g:solarized_termcolors=256
 
 " Force red highlight for trailing whitespace
