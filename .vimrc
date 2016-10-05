@@ -16,8 +16,8 @@ let mapleader = ','
 
 syntax on
 set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+"colorscheme solarized
+"let g:solarized_termcolors=256
 
 " Force red highlight for trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -44,13 +44,7 @@ endif
 " Change font style to be bigger and more readable
 set guifont=Menlo\ Regular:h13
 
-" Allow CTRL+P to be CMD+P
-let g:ctrlp_map = '<D-p>'
-let g:ctrlp_cmd = 'CtrlP'
-map <D-t> <D-p>
-
 " Rspec Runner
-let g:rspec_runner = "os_x_iterm"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -77,21 +71,3 @@ else
 endif
 
 autocmd filetype crontab setlocal nobackup nowritebackup
-
-" C++ mappings
-noremap <leader>m :call RunMake() <CR>
-
-function! RunMake()
-  silent !clear
-  execute "!./make.sh"
-endfunction
-
-" Support Syntastic C++11
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_include_dirs = [ './include/' ]
-let g:syntastic_cpp_auto_refresh_includes = 1
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf = 0
