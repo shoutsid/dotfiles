@@ -1,4 +1,19 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-haml'
+Plug 'scrooloose/nerdtree'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --ts-completer' }
+Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+
+call plug#end()
+
 
 " 2 Space indentation
 set ts=2 et sw=2
@@ -18,8 +33,6 @@ let mapleader = ','
 
 syntax on
 set background=dark
-colorscheme monokai
-"let g:solarized_termcolors=256
 
 " Force red highlight for trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red

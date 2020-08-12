@@ -5,14 +5,13 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 # Start Tmux on every shell login
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
-
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -64,12 +63,6 @@ export PATH="/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:$PATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Prefer Vim for remote sessions & GVim on local development
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='Gvim'
-fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -88,13 +81,9 @@ fi
 # Set Tork log directory
 export TORK_CONFIGS=default:logdir
 
-# Ensure editors and git editor to be vim
-export GIT_EDITOR=vim
-export VISUAL=vim
-export EDITOR=vim
+# Prefer NeoVim
+export GIT_EDITOR=nvim
+export VISUAL=nvim
+export EDITOR=nvim
 
-
-# Load Chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
+export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
