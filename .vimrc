@@ -80,9 +80,9 @@ autocmd BufWritePre     *.* :call TrimWhiteSpace()
 
 " Suggested column size
 if exists('+colorcolumn')
-  set colorcolumn=80
+  set colorcolumn=160
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>160v.\+', -1)
 endif
 
 autocmd filetype crontab setlocal nobackup nowritebackup
